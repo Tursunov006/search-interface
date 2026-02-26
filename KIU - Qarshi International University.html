@@ -1,0 +1,535 @@
+
+<!-- saved from url=(0098)http://localhost:63342/untitled/kiu.html?_ijt=rhc3uorcf8fp9pc3nh0p80qpj0&_ij_reload=RELOAD_ON_SAVE -->
+<html lang="uz"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>` 
+
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIU - Qarshi International University</title>
+  <link href="./KIU - Qarshi International University_files/css2" rel="stylesheet">
+  <link rel="stylesheet" href="./KIU - Qarshi International University_files/all.min.css">
+  <style>
+    /* Avvalgi CSS kodlari bir xil */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#4b1248,#8f2d56);
+      color:white;
+      min-height:100vh;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      cursor:pointer;
+    }
+
+    .logo i {
+      font-size: 50px;
+      color: #ffd700;
+      text-shadow: 0 0 10px rgba(255,215,0,0.5);
+      transition:0.4s;
+    }
+
+    .logo i:hover{
+      transform:rotate(5deg) scale(1.1);
+      text-shadow: 0 0 20px rgba(255,215,0,0.8);
+    }
+
+    .logo span{
+      font-size:22px;
+      font-weight:600;
+    }
+
+    nav button{
+      margin-left:15px;
+      padding:10px 22px;
+      border:none;
+      border-radius:30px;
+      background:white;
+      color:#8f2d56;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    nav button:hover{
+      background:#ffd6ff;
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero{
+      text-align:center;
+      margin-top:120px;
+      animation:fadeIn 1.2s ease;
+    }
+
+    .hero h1{
+      font-size:46px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      opacity:0.85;
+    }
+
+    .cards{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:70px;
+      flex-wrap:wrap;
+      margin-bottom:50px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.1);
+      padding:35px;
+      border-radius:20px;
+      width:260px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+      cursor:pointer;
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-15px) scale(1.05);
+      background:rgba(255,255,255,0.2);
+      box-shadow:0 15px 30px rgba(0,0,0,0.3);
+      border:1px solid rgba(255,255,255,0.5);
+    }
+
+    .card i {
+      font-size: 48px;
+      margin-bottom: 15px;
+      color: #ffd700;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(40px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      color: #333;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #4b1248;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 2px solid #eee;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .modal-content input:focus {
+      border-color: #8f2d56;
+      outline: none;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg,#4b1248,#8f2d56);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .modal-content button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(143,45,86,0.4);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #999;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      color: #4b1248;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: white;
+      color: #333;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      display: none;
+      animation: slideIn 0.3s ease;
+      z-index: 1001;
+      border-left: 4px solid #4CAF50;
+    }
+
+    .toast.error {
+      border-left-color: #f44336;
+    }
+
+    @keyframes slideIn {
+      from {transform: translateX(100%); opacity: 0;}
+      to {transform: translateX(0); opacity: 1;}
+    }
+
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #8f2d56;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
+
+
+<header>
+  <div class="logo" onclick="location.reload()">
+    <i class="fas fa-university"></i>
+    <span>Qarshi International University</span>
+  </div>
+
+  <nav>
+    <button onclick="openModal(&#39;admin&#39;)"><i class="fas fa-user-shield"></i> Admin</button>
+    <button onclick="openModal(&#39;ustoz&#39;)"><i class="fas fa-chalkboard-teacher"></i> Ustoz</button>
+    <button onclick="openModal(&#39;talaba&#39;)"><i class="fas fa-user-graduate"></i> Talaba</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>KIU Elektron Nazorat Tizimi</h1>
+  <p><i class="fas fa-exclamation-triangle" style="color: #ffd700;"></i> Hayfsan | <i class="fas fa-check-circle" style="color: #4CAF50;"></i> Tasdiqlash | <i class="fas fa-key" style="color: #ff6b6b;"></i> Yakuniy Ruxsat</p>
+</section>
+
+<section class="cards">
+  <div class="card" onclick="openModal(&#39;ustoz&#39;)">
+    <i class="fas fa-chalkboard-teacher"></i>
+    <h3>👨‍🏫 Ustozlar</h3>
+    <p>Fanlar va tasdiqlash tizimi</p>
+    <small>15 nafar ustoz faol</small>
+  </div>
+
+  <div class="card" onclick="openModal(&#39;talaba&#39;)">
+    <i class="fas fa-user-graduate"></i>
+    <h3>🎓 Talabalar</h3>
+    <p>Hayfsan holatini ko‘rish</p>
+    <small>342 nafar talaba</small>
+  </div>
+
+  <div class="card" onclick="showFinalControl()">
+    <i class="fas fa-chart-line"></i>
+    <h3>📊 Yakuniy Nazorat</h3>
+    <p>Avtomatik ruxsat tekshirish</p>
+    <small>12.06.2024</small>
+  </div>
+</section>
+
+<!-- Admin Modal -->
+<div id="adminModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal(&#39;admin&#39;)">×</span>
+    <h2><i class="fas fa-user-shield" style="color: #8f2d56;"></i> Admin Panel</h2>
+    <input type="text" id="adminUsername" placeholder="Login" value="admin">
+    <input type="password" id="adminPassword" placeholder="Parol" value="admin123">
+    <button onclick="loginWithAPI(&#39;admin&#39;)">Kirish <i class="fas fa-arrow-right"></i></button>
+    <div style="text-align: center; margin-top: 10px;">
+      <small>Test: admin / admin123</small>
+    </div>
+  </div>
+</div>
+
+<!-- Ustoz Modal -->
+<div id="ustozModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal(&#39;ustoz&#39;)">×</span>
+    <h2><i class="fas fa-chalkboard-teacher" style="color: #2196F3;"></i> Ustoz Paneli</h2>
+    <input type="text" id="teacherUsername" placeholder="Login" value="ustoz">
+    <input type="password" id="teacherPassword" placeholder="Parol" value="ustoz123">
+    <button onclick="loginWithAPI(&#39;ustoz&#39;)">Kirish <i class="fas fa-arrow-right"></i></button>
+    <div style="text-align: center; margin-top: 10px;">
+      <small>Test: ustoz / ustoz123</small>
+    </div>
+  </div>
+</div>
+
+<!-- Talaba Modal -->
+<div id="talabaModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal(&#39;talaba&#39;)">×</span>
+    <h2><i class="fas fa-user-graduate" style="color: #4CAF50;"></i> Talaba Paneli</h2>
+    <input type="text" id="studentId" placeholder="Talaba ID" value="2024001">
+    <input type="password" id="studentPassword" placeholder="Parol" value="student123">
+    <button onclick="loginWithAPI(&#39;talaba&#39;)">Kirish <i class="fas fa-arrow-right"></i></button>
+    <div style="text-align: center; margin-top: 10px;">
+      <small>Test: 2024001 / student123</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast xabar -->
+<div id="toast" class="toast error" style="display: none;">
+  <span id="toastMessage">Serverga ulanishda xatolik!</span>
+</div>
+
+<script>
+  // API sozlamalari
+  const API_URL = 'http://localhost:3000/api';
+
+  // Modal oynalarni boshqarish
+  function openModal(role) {
+    document.getElementById(role + 'Modal').style.display = 'flex';
+  }
+
+  function closeModal(role) {
+    document.getElementById(role + 'Modal').style.display = 'none';
+  }
+
+  // Toast xabarni ko'rsatish
+  function showToast(message, isError = false, duration = 3000) {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    toastMessage.textContent = message;
+    toast.className = 'toast' + (isError ? ' error' : '');
+    toast.style.display = 'block';
+
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, duration);
+  }
+
+  // API orqali login qilish
+  async function loginWithAPI(role) {
+    const loginBtn = event.target;
+    const originalText = loginBtn.innerHTML;
+    loginBtn.innerHTML = '<span class="loading"></span> Kirish...';
+    loginBtn.disabled = true;
+
+    try {
+      let loginData = {
+        role: role
+      };
+
+      if (role === 'admin') {
+        loginData.username = document.getElementById('adminUsername').value;
+        loginData.password = document.getElementById('adminPassword').value;
+      } else if (role === 'ustoz') {
+        loginData.username = document.getElementById('teacherUsername').value;
+        loginData.password = document.getElementById('teacherPassword').value;
+      } else if (role === 'talaba') {
+        loginData.studentId = document.getElementById('studentId').value;
+        loginData.password = document.getElementById('studentPassword').value;
+      }
+
+      const response = await fetch(`${API_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        showToast(`${role} paneliga xush kelibsiz!`);
+        closeModal(role);
+
+        // Ma'lumotlarni localStorage ga saqlash
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('role', data.role);
+
+        // Panelga o'tish
+        setTimeout(() => {
+          window.location.href = `${role}-panel.html`;
+        }, 1500);
+      } else {
+        showToast(data.message || 'Login yoki parol xato!', true);
+      }
+    } catch (error) {
+      console.error('Login xatolik:', error);
+      showToast('Serverga ulanishda xatolik!', true);
+    } finally {
+      loginBtn.innerHTML = originalText;
+      loginBtn.disabled = false;
+    }
+  }
+
+  // Yakuniy nazorat funksiyasi
+  function showFinalControl() {
+    showToast('Yakuniy nazorat: 12-iyun 2024', false);
+
+    // Serverdan ma'lumot olish
+    fetch(`${API_URL}/final-control`)
+            .then(response => response.json())
+            .then(data => {
+              console.log('Yakuniy nazorat ma\'lumoti:', data);
+            })
+            .catch(error => {
+              console.log('Demo rejim: Yakuniy nazorat ma\'lumoti');
+            });
+
+    setTimeout(() => {
+      alert('📢 Yakuniy nazorat ma\'lumoti:\n\n' +
+              '• Sana: 12-iyun 2024\n' +
+              '• Boshlanish vaqti: 09:00\n' +
+              '• Hayfsan olgan talabalar ruxsat etilmaydi\n' +
+              '• Ro\'yxatdan o\'tish talab qilinadi');
+    }, 500);
+  }
+
+  // Modal tashqarisiga bosilganda yopish
+  window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+      event.target.style.display = 'none';
+    }
+  }
+
+  // ESC tugmasi bilan modalni yopish
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape') {
+      const modals = document.getElementsByClassName('modal');
+      for(let modal of modals) {
+        modal.style.display = 'none';
+      }
+    }
+  });
+
+  // Enter tugmasi bilan login qilish
+  document.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter') {
+      const modals = document.getElementsByClassName('modal');
+      for(let modal of modals) {
+        if(modal.style.display === 'flex') {
+          if(modal.id === 'adminModal') loginWithAPI('admin');
+          else if(modal.id === 'ustozModal') loginWithAPI('ustoz');
+          else if(modal.id === 'talabaModal') loginWithAPI('talaba');
+        }
+      }
+    }
+  });
+
+  // Server ulanishini tekshirish
+  window.onload = function() {
+    console.log('KIU tizimiga xush kelibsiz!');
+
+    // Serverni tekshirish
+    fetch(`${API_URL}/health`)
+            .then(response => response.json())
+            .then(data => {
+              showToast('✅ Serverga ulandi!');
+            })
+            .catch(error => {
+              console.log('⚠️ Server ishga tushmagan. Demo rejim ishlayapti.');
+              showToast('⚠️ Demo rejim: Server ulanishi yo\'q', true, 5000);
+            });
+  }
+</script>
+
+`<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host + 
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash 
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script></body></html>
